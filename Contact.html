@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            background: #2a7ea3;
+            margin: 0;
+            padding: 0;
+        }
+
+        .contact 
+        {
+            background: #e8f4fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .contact h2 
+        {
+            font-size: 28px;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        footer form 
+        {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        footer label 
+        {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        footer input, 
+        footer textarea 
+        {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        footer button 
+        {
+            background-color: #007bff; 
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        footer button:hover 
+        {
+            background-color: #0056b3; 
+        }
+
+        .contact a 
+        {
+            display: block; 
+            color: blue; 
+            text-decoration: none; 
+            font-weight: bold; 
+            text-align: center; 
+            margin-top: 20px; 
+            padding: 10px; 
+        }
+
+        .contact a:hover 
+        {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) 
+        {
+            .contact 
+            {
+                padding: 20px;
+            }
+
+            .contact h2 
+            {
+                font-size: 24px;
+            }
+
+            footer form 
+            {
+                padding: 10px;
+            }
+
+            footer label 
+            {
+                font-size: 14px;
+            }
+
+            footer input, footer textarea 
+            {
+                font-size: 13px;
+            }
+
+            footer button 
+            {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <footer>
+            <form class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </footer>
+        <a href="Website.html">Back to Home page</a>
+    </section>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(event) 
+        {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) 
+            {
+                alert(`Thank you, ${name}! Your message has been received.`);
+                this.reset();
+            } 
+            else 
+            {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
